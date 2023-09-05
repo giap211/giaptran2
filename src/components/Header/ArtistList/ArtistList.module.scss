@@ -1,0 +1,21 @@
+@import '../../../scss/variable';
+@import '../../../scss/mixin';
+
+.wrapper {
+  display: flex;
+  gap: 3px;
+  @include text-line-clamp(2);
+
+  .name {
+    color: $text-neutral;
+  }
+
+  .playlist {
+    font-size: 14px;
+    color: $white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

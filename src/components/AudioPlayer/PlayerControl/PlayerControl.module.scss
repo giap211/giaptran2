@@ -1,0 +1,60 @@
+@import '../../../scss/variable';
+@import '../../../scss/mixin';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  @include reset-button;
+  background-color: transparent;
+  border: none;
+  color: hsla(0, 0%, 100%, 0.7);
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.playback-bar {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.playback-position,
+.playback-duration {
+  width: 40px;
+  color: $text-subdued;
+  font-size: 11px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.range {
+  flex: 1;
+}
+
+.active {
+  @include button-active;
+
+  color: $secondary !important;
+  position: relative;
+
+  &::after {
+    bottom: -3px;
+  }
+}

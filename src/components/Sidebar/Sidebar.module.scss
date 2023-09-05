@@ -1,0 +1,11 @@
+@import '../../scss/variable';
+
+.sidebar {
+  // width: max(20%, 280px);
+  // max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: $panel-gap;
+  min-width: 280px;
+  max-width: 500px;
+}

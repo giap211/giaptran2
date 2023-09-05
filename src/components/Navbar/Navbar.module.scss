@@ -1,0 +1,195 @@
+@import '../../scss/variable';
+@import '../../scss/mixin';
+
+.nav {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $navbar-height;
+  z-index: 8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -999;
+    // background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6));
+    transition: background-color 1s ease;
+    background-color: $bg-base;
+  }
+
+  &-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &-button {
+      display: flex;
+      gap: $panel-gap;
+
+      button {
+        @include button-icon(32px, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+        font-size: 20px;
+        color: $white;
+      }
+
+      button:disabled {
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: not-allowed;
+      }
+    }
+
+    &-search {
+      width: 364px;
+      display: flex;
+      position: relative;
+
+      &:has(input:is(:focus, :hover)) .icon {
+        opacity: 1;
+      }
+
+      form {
+        flex: 1;
+
+        input {
+          padding: 6px 36px;
+          background-color: $bg-elevated-base;
+          width: 100%;
+          height: 48px;
+          font-size: 14px;
+          border: none;
+          border-radius: 500px;
+          color: #fff !important;
+
+          &:hover {
+            background-color: $bg-elevated-highlight;
+            box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.2);
+          }
+
+          &:focus {
+            box-shadow: 0 0 0 1px $white;
+          }
+        }
+      }
+
+      .icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-42%);
+        font-size: 18px;
+        color: #fff;
+        opacity: 0.7;
+      }
+
+      .search-icon {
+        left: 12px;
+      }
+
+      .clear-btn {
+        right: 12px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+
+    &-play-btn {
+      display: flex;
+      align-items: center;
+      gap: $panel-gap;
+      opacity: 0;
+      transition: all 0.5s ease;
+
+      .play-btn {
+        @include button-icon(48px, $primary, $primary);
+        opacity: 1;
+        font-size: 24px;
+        transition: opacity 0.2s ease, scale 33ms ease;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+
+        &:hover {
+          scale: 1.05;
+        }
+      }
+
+      .artist-name {
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .user {
+    position: relative;
+    button[name='user account'] {
+      @include button-icon(32px, $bg-base, $bg-base);
+      color: $white;
+      font-size: 16px;
+    }
+
+    &-avt {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      border: 3px #292929 solid;
+    }
+
+    &-dropdown {
+      display: none;
+      position: absolute;
+      top: 26px;
+      right: -60%;
+      padding-top: 10px;
+    }
+
+    &:hover .user-dropdown {
+      display: block;
+    }
+  }
+}
+
+.login-btn {
+  button {
+    @include reset-button;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: $white;
+    padding: 10px 16px;
+    border-radius: 500px;
+    transform-origin: center;
+    transition: all 33ms ease;
+    cursor: pointer;
+    color: $black;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, .15);
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+}
+
+.darken {
+  filter: brightness(65%) !important;
+}
+
+.genre-title {
+  margin-left: 10px;
+  font-size: 24px;
+  color: $white;
+  font-weight: 700;
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.show {
+  opacity: 1;
+}

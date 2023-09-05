@@ -1,0 +1,25 @@
+@import '../../scss/variable';
+
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $black;
+}
+
+.spinner {
+  width: calc(100% - 16px);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-base;
+  margin: 8px 8px 0;
+  border-radius: $panel-border-radius;
+}
+
+.audio-player-bar {
+  height: 88px;
+  padding: 8px;
+}

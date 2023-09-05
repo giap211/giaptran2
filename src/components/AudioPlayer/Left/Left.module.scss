@@ -1,0 +1,94 @@
+@import '../../../scss/variable';
+@import '../../../scss/mixin';
+
+.wrapper {
+  min-width: 180px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow: hidden;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.thumb {
+  height: 56px;
+  width: 56px;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .default-thumb {
+    @include default-thumb;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.body {
+  // flex: 1;
+  overflow: hidden;
+  max-width: calc(100% - 148px);
+
+  & > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .name {
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    @include text-in-one-line;
+    position: relative;
+
+    *::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pivot {
+      color: transparent;
+      position: absolute;
+      opacity: 0;
+      z-index: -99;
+    }
+
+    span {
+      margin-right: 40px;
+    }
+
+    a {
+      color: $white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .artists {
+    @include text-in-one-line;
+    display: flex;
+    overflow: hidden;
+  }
+}
+
+.icon {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: hsla(0, 0%, 100%, 0.7);
+  margin-inline: 4px 40px;
+
+  &:hover {
+    color: $white;
+  }
+}

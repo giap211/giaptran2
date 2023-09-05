@@ -1,0 +1,19 @@
+@import '../../scss/variable';
+
+.wrapper {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.body {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-bottom: 32px;
+  padding-top: $navbar-height;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

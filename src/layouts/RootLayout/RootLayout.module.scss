@@ -1,0 +1,42 @@
+@import '../../scss/variable';
+
+.root-layout {
+  background-color: $black;
+  height: 100vh;
+  width: max(100vw, 900px);
+  overflow: hidden;
+  display: flex;
+  gap: $panel-gap;
+  padding: .8rem;
+  max-width: 3000px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.top {
+  height: calc(100vh - 96px);
+}
+
+.bottom {
+  height: 72px;
+}
+
+.main {
+  flex: 1;
+  height: 100%;
+  background-color: $bg-base;
+  border-radius: $panel-gap;
+  -webkit-border-radius: $panel-gap;
+  overflow: hidden;
+  -webkit-overflow: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}

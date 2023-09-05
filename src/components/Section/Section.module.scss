@@ -1,0 +1,51 @@
+@import '../../scss/variable';
+
+.wrapper {
+  padding-inline: 24px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.header {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 67px;
+
+  .heading {
+    color: $white;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 8px 0 16px;
+  }
+
+  a {
+    font-size: 14px;
+    font-weight: 700;
+    color: $text-neutral;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.body {
+  overflow: hidden;
+  display: grid;
+  // grid-template-columns: repeat(4, 1fr);
+  grid-column: 1;
+  grid-gap: 24px;
+  // max-height: 305px;
+  align-content: stretch;
+}
+
+.un-clickable {
+  &:hover {
+    text-decoration: none !important;
+    cursor: text;
+  }
+  pointer-events: none;
+}
