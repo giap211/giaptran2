@@ -3,7 +3,7 @@ import queryString from 'query-string'
 import { getAccessToken, getAccessTokenDev } from './getAccessToken'
 
 export const spotifyApiClient = axios.create({
-  baseURL: 'https://api.spotify.com/v1',
+  baseURL: 'https://api.spotify.com/v1/tracks/2TpxZ7JUBn3uw46aR7qd6V',
   paramsSerializer: (params) => queryString.stringify(params, { encode: false }),
 })
 
@@ -25,7 +25,7 @@ spotifyApiClient.interceptors.request.use(async (config) => {
 })
 
 export const spotifyApiDev = axios.create({
-  baseURL: 'https://api.spotify.com/v1',
+  baseURL: 'https://api.spotify.com/v1/tracks/2TpxZ7JUBn3uw46aR7qd6V',
   paramsSerializer: (params) => queryString.stringify(params, { encode: false }),
 })
 
